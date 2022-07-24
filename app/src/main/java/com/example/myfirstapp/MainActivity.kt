@@ -13,10 +13,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
     }
-    fun onClickTest(view: View){
-        val tvTest= findViewById<TextView>(R.id.tvTest)
-       if (tvTest.text.equals("privet")) tvTest.text = "NOTprivet"
-       else tvTest.text = "privet"
+
+    fun onClickTest(view: View) {
+        val tvTest = findViewById<TextView>(R.id.tvTest)
+        if (tvTest.text.equals("privet")) tvTest.text = "NOTprivet"
+        else tvTest.text = "privet"
 
     }
 }
