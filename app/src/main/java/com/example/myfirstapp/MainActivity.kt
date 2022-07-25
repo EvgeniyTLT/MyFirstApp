@@ -8,6 +8,8 @@ import android.view.View
 import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
+    val counter = 5
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
