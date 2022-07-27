@@ -13,24 +13,28 @@ import com.example.myfirstapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     lateinit var bindingClass: ActivityMainBinding
-    val maxPerson = 90
-    val currentPerson = 91
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         bindingClass = ActivityMainBinding.inflate(layoutInflater)
         setContentView(bindingClass.root)
-        bindingClass.b1.setOnClickListener {
-            if (maxPerson > currentPerson) {
-                bindingClass.tvResult.text = "Все в порядке"
-                bindingClass.tvResult.setBackgroundColor(Color.MAGENTA)
-            } else bindingClass.tvResult.text = "Много народу"
-        }
-
-        bindingClass.b2.setOnClickListener {
-        }
-
-        bindingClass.b3.setOnClickListener {
+        bindingClass.btResult.setOnClickListener {
+            val result = bindingClass.edValue.text.toString().toInt()
+            when (result) {
+                in 1..1000 -> {
+                    bindingClass.tvResult.visibility = View.VISIBLE
+                    bindingClass.tvResult.text = "Начинающих блогер"
+                }
+                in 1000..100000 -> {
+                    bindingClass.tvResult.visibility = View.VISIBLE
+                    bindingClass.tvResult.text = "Средний блогер"
+                }
+                else -> {
+                    bindingClass.tvResult.visibility = View.VISIBLE
+                    bindingClass.tvResult.text = "Вы звезда"
+                }
+            }
         }
     }
 }
