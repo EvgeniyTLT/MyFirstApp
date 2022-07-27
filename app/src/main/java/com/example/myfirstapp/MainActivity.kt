@@ -27,11 +27,8 @@ class MainActivity : AppCompatActivity() {
             } else bindingClass.tvResult.text = "Много народу"
         }
         bindingClass.b2.setOnClickListener {
-
         }
         bindingClass.b3.setOnClickListener {
-
         }
-
     }
 }
