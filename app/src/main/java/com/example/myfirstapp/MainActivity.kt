@@ -1,5 +1,6 @@
 package com.example.myfirstapp
 
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.PersistableBundle
@@ -12,24 +13,24 @@ import com.example.myfirstapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     lateinit var bindingClass: ActivityMainBinding
-    val a = 324
-    val b = 34
+    val maxPerson = 90
+    val currentPerson = 89
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         bindingClass = ActivityMainBinding.inflate(layoutInflater)
         setContentView(bindingClass.root)
         bindingClass.b1.setOnClickListener {
-            val result = a + b
-            bindingClass.tvResult.text = "Результат сложения равен: $result"
+            if (maxPerson > currentPerson) {
+                bindingClass.tvResult.text = "Все в порядке"
+                bindingClass.tvResult.setBackgroundColor(Color.MAGENTA)
+            } else bindingClass.tvResult.text = "Много народу"
         }
         bindingClass.b2.setOnClickListener {
-            val result = a - b
-            bindingClass.tvResult.text = "Результат вычитания равен: $result"
+
         }
         bindingClass.b3.setOnClickListener {
-            val result = a * b
-            bindingClass.tvResult.text = "Результат умножения равен: $result"
+
         }
 
     }
