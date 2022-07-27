@@ -14,7 +14,7 @@ import com.example.myfirstapp.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
     lateinit var bindingClass: ActivityMainBinding
     val maxPerson = 90
-    val currentPerson = 89
+    val currentPerson = 91
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,8 +26,10 @@ class MainActivity : AppCompatActivity() {
                 bindingClass.tvResult.setBackgroundColor(Color.MAGENTA)
             } else bindingClass.tvResult.text = "Много народу"
         }
+
         bindingClass.b2.setOnClickListener {
         }
+
         bindingClass.b3.setOnClickListener {
         }
     }
