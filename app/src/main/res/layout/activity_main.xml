@@ -55,4 +55,15 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/edValue"
         app:layout_constraintTop_toBottomOf="@+id/edValue" />
+
+    <ImageView
+        android:id="@+id/imFoto"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/edValue"
+        app:layout_constraintEnd_toEndOf="@+id/edValue"
+        app:layout_constraintStart_toStartOf="@+id/edValue"
+        app:srcCompat="@drawable/ic_launcher_background" />
 </androidx.constraintlayout.widget.ConstraintLayout>
