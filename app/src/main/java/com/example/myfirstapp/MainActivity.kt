@@ -13,41 +13,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         bindingClass = ActivityMainBinding.inflate(layoutInflater)
         setContentView(bindingClass.root)
-        bindingClass.btResult.setOnClickListener {
-            val result = bindingClass.edValue.text.toString()
 
-            when (result) {
-                Constance.INGINER -> {
-                    bindingClass.tvResult.visibility = View.VISIBLE
-                    bindingClass.imFoto.visibility = View.VISIBLE
-                    val tempText = "Получите ваши ${Constance.INGINER_ZP} рублей"
-                    if (bindingClass.edPassword.text.toString() == Constance.INGINER_PASSWORD) {
-                        bindingClass.tvResult.text = tempText
-                        bindingClass.imFoto.setImageResource(R.drawable.egor_fase)
-                    } else {
-                        bindingClass.tvResult.text = "Введен не верный пароль"
-                        bindingClass.imFoto.setImageResource(R.drawable.ic_launcher_background)
-                    }
-                }
-                Constance.DIRECTOR -> {
-                    bindingClass.tvResult.visibility = View.VISIBLE
-                    bindingClass.imFoto.visibility = View.VISIBLE
-                    val tempText = "Получите ваши ${Constance.DIRECTOR_ZP} рублей"
-                    if (bindingClass.edPassword.text.toString() == Constance.DIRECTOR_PASSWORD) {
-                        bindingClass.tvResult.text = tempText
-                        bindingClass.imFoto.setImageResource(R.drawable.sergey_fase)
-                    } else {
-                        bindingClass.tvResult.text = "Введен не верный пароль"
-                        bindingClass.imFoto.setImageResource(R.drawable.ic_launcher_background)
-                    }
-                }
-                else -> {
-                    bindingClass.tvResult.visibility = View.VISIBLE
-                    bindingClass.imFoto.visibility = View.VISIBLE
-                    bindingClass.tvResult.text = "Нет такого рабочего"
-                    bindingClass.imFoto.setImageResource(R.drawable.ic_launcher_background)
-                }
-            }
-        }
     }
 }
