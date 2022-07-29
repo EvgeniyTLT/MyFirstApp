@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.view.View
 import com.example.myfirstapp.databinding.ActivityTest1Binding
 
-class TestActivity1 : AppCompatActivity() {
+class SignInUpAct : AppCompatActivity() {
     lateinit var bindingClass: ActivityTest1Binding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,7 +18,7 @@ class TestActivity1 : AppCompatActivity() {
     }
 
     fun onClickBack(view: View) {
-        val i = Intent(this, TestActivity1::class.java)
+        val i = Intent(this, SignInUpAct::class.java)
         i.putExtra("key2", bindingClass.edName.text.toString())
         setResult(RESULT_OK, intent)
         finish()

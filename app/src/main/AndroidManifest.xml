@@ -11,7 +11,7 @@
         android:theme="@style/Theme.MyFirstApp">
 
         <activity
-            android:name=".TestActivity1"
+            android:name=".SignInUpAct"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
