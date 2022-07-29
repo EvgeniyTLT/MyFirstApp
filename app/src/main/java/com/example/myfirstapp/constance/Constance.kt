@@ -7,4 +7,12 @@ object Constance {
     const val SING_STATE = "sing_state"
     const val REQUEST_COD_SING_IN = 1212
     const val REQUEST_COD_SING_UP = 2121
+
+    const val LOGIN = "login"
+    const val PASSWORD = "password"
+    const val NAME = "name"
+    const val NAME2 = "name2"
+    const val NAME3 = "name3"
+    const val AVATAR_ID = "avatar_id"
+
 }
