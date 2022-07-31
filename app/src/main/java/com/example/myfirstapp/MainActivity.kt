@@ -58,7 +58,6 @@ class MainActivity : AppCompatActivity() {
             bindingClass.bExit.text = "Выйти"
         }
     }
-
     fun onClickSingIn(view: View) {
 
         if (bindingClass.imAvatar.isVisible && bindingClass.tvInfo.text.toString() != "Такого аккаунта не существует") {
