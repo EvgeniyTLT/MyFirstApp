@@ -58,6 +58,7 @@ class MainActivity : AppCompatActivity() {
             bindingClass.bExit.text = "Выйти"
         }
     }
+
     fun onClickSingIn(view: View) {
 
         if (bindingClass.imAvatar.isVisible && bindingClass.tvInfo.text.toString() != "Такого аккаунта не существует") {
@@ -65,7 +66,6 @@ class MainActivity : AppCompatActivity() {
             bindingClass.tvInfo.text = ""
             bindingClass.bHide.visibility = View.VISIBLE
             bindingClass.bExit.text = getString(R.string.sign_in)
-
         } else {
             val intent = Intent(this, SignInUpAct::class.java)
             intent.putExtra(Constance.SING_STATE, Constance.SING_IN_STATE)
