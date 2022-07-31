@@ -66,7 +66,6 @@ class MainActivity : AppCompatActivity() {
             bindingClass.bHide.visibility = View.VISIBLE
             bindingClass.bExit.text = getString(R.string.sign_in)
 
-
         } else {
             val intent = Intent(this, SignInUpAct::class.java)
             intent.putExtra(Constance.SING_STATE, Constance.SING_IN_STATE)
