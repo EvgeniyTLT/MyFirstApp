@@ -1,26 +1,36 @@
 package com.example.myfirstapp
 
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import androidx.activity.result.ActivityResult
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContract
+import androidx.activity.result.contract.ActivityResultContracts
 
 
 class MainActivity : AppCompatActivity() {
 
-    val lostArray = arrayOf(10000, 2300, 45000, 65000, 6500, 400)
-    val earnArray = arrayOf(15000, 300, 345000, 5000, 16500, 3400)
-    val resultArray = ArrayList<String>()
-    var user = User("Bob", "00000", 25)
-
+    private var launcher: ActivityResultLauncher<Intent>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val names = resources.getStringArray(R.array.names)
-        for ((index, name) in names.withIndex()) {
-            resultArray.add("Имя: $name - прибыль: ${earnArray[index] - lostArray[index]}")
-            Log.d("MyLog", "Статистика -/- ${resultArray[index]}")
-            user.addAge(10)
-        }
+        setContentView(R.layout.activity_main)
+        launcher =
+            registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result: ActivityResult ->
+
+
+                if (result.resultCode == RESULT_OK) {
+                    val text = result.data?.getStringExtra("key1")
+                    Log.d("MyLog", "Result from MainActivity2 $text")
+                }
+            }
+    }
+
+    fun onClick(view: View) {
+        launcher?.launch(Intent(this, MainActivity2::class.java))
     }
 }
